@@ -127,6 +127,11 @@ export function LandingExperience() {
                 اطلب نظاماً مخصصاً <Sparkles size={18} />
               </Link>
             </div>
+            <div className="hero-proof-row" aria-label="N9 capabilities">
+              <span>Windows Software</span>
+              <span>Custom Systems</span>
+              <span>Secure Downloads</span>
+            </div>
           </motion.div>
 
           <motion.div

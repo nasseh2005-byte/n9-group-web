@@ -1,8 +1,21 @@
 import type { Metadata } from "next";
+import { Cinzel, IBM_Plex_Sans_Arabic } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
 import { ClickSound } from "@/components/ClickSound";
 import { navigation, site } from "@/data/site";
+
+const arabicFont = IBM_Plex_Sans_Arabic({
+  subsets: ["arabic"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-arabic"
+});
+
+const displayFont = Cinzel({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  variable: "--font-display"
+});
 
 export const metadata: Metadata = {
   title: "N9 GROUP | N9 SYSTEM",
@@ -11,7 +24,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="ar" dir="rtl">
+    <html lang="ar" dir="rtl" className={`${arabicFont.variable} ${displayFont.variable}`}>
       <body>
         <ClickSound />
         <header className="site-header">
@@ -26,6 +39,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 </Link>
               ))}
             </div>
+            <Link href="/contact" className="nav-cta">
+              طلب نظام
+            </Link>
           </nav>
         </header>
         {children}
