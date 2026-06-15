@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Download } from "lucide-react";
+import { Download, FileText } from "lucide-react";
 import { downloads } from "@/data/downloads";
 
 export default function DownloadsPage() {
@@ -9,7 +9,8 @@ export default function DownloadsPage() {
         <div className="eyebrow">Downloads & File Hub</div>
         <h1>مركز التحميل والتحديثات.</h1>
         <p className="lead">
-          صفحة مخصصة لإصدارات ويندوز، الكتيبات التعريفية، وروابط التطبيقات المستقبلية.
+          صفحة مخصصة لإصدارات N9 LAW SYSTEM للويندوز والكتيبات التعريفية. روابط التحميل الحقيقية ستُربط لاحقاً بتخزين
+          آمن مثل Vercel Blob أو S3.
         </p>
         <div className="card">
           {downloads.map((item) => (
@@ -21,10 +22,21 @@ export default function DownloadsPage() {
               <div>Version {item.version}</div>
               <div className="muted">{item.date}</div>
               <Link className="button primary" href={item.href}>
-                تحميل <Download size={18} />
+                تحميل لاحقاً <Download size={18} />
               </Link>
             </div>
           ))}
+          <div className="download-row">
+            <div>
+              <h3>Product Brochure</h3>
+              <p className="muted">PDF</p>
+            </div>
+            <div>Coming soon</div>
+            <div className="muted">N9 LAW</div>
+            <Link className="button" href="#">
+              الكتيب <FileText size={18} />
+            </Link>
+          </div>
         </div>
       </div>
     </main>

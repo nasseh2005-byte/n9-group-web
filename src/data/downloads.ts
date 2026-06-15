@@ -4,8 +4,8 @@ export const downloads = [
     platform: "Windows",
     version: "1.0.0",
     date: "2026-06-15",
-    size: "ضع الحجم هنا",
+    size: "يضاف لاحقاً",
     href: "#",
-    notes: ["الإصدار الأولي", "رابط التحميل يستبدل لاحقاً بملف Vercel Blob أو S3"]
+    notes: ["إصدار أولي", "رابط التحميل سيُربط لاحقاً بملف آمن على Vercel Blob أو S3"]
   }
 ];

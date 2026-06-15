@@ -11,7 +11,8 @@ export default function ServicesPage() {
         <div className="eyebrow">Services</div>
         <h1>برمجة مخصصة، قواعد بيانات، وأتمتة ذكية.</h1>
         <p className="lead">
-          N9 GROUP تبني الحل حسب طريقة عمل العميل: من ملف Excel أو Access بسيط إلى نظام ويب متكامل.
+          خدمات N9 منفصلة عن المنتجات الجاهزة: نطوّر الحل حسب طريقة عمل العميل، من ملف Excel أو Access بسيط إلى نظام
+          ويب أو برنامج متكامل.
         </p>
         <div className="grid">
           {services.map((service) => (

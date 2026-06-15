@@ -550,6 +550,8 @@ textarea.input {
   gap: 8px;
   padding: 0 18px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(245, 245, 247, 0.74);
+  font-size: 12px;
 }
 
 .device-top span {
@@ -601,6 +603,45 @@ textarea.input {
     radial-gradient(circle at 42% 48%, rgba(214, 168, 79, 0.9) 0 6px, transparent 7px),
     radial-gradient(circle at 68% 58%, rgba(10, 132, 255, 0.9) 0 6px, transparent 7px),
     rgba(255, 255, 255, 0.035);
+}
+
+.law-dashboard-preview {
+  min-height: 150px;
+  border-radius: 8px;
+  border: 1px solid rgba(214, 168, 79, 0.24);
+  background:
+    linear-gradient(135deg, rgba(214, 168, 79, 0.18), transparent 36%),
+    linear-gradient(90deg, rgba(10, 132, 255, 0.18), transparent 70%),
+    rgba(255, 255, 255, 0.045);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px;
+  overflow: hidden;
+  position: relative;
+}
+
+.law-dashboard-preview::after {
+  content: "";
+  position: absolute;
+  inset: auto 24px 22px 24px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(214, 168, 79, 0.7), transparent);
+}
+
+.law-dashboard-preview small {
+  color: var(--muted);
+}
+
+.law-dashboard-preview strong {
+  display: block;
+  margin-top: 8px;
+  font-size: clamp(28px, 4vw, 48px);
+}
+
+.law-dashboard-preview svg {
+  color: var(--gold);
+  filter: drop-shadow(0 0 24px rgba(214, 168, 79, 0.24));
 }
 
 .stat-grid {
@@ -702,6 +743,11 @@ textarea.input {
   overflow: hidden;
 }
 
+.main-product {
+  border-color: rgba(214, 168, 79, 0.3);
+  box-shadow: 0 36px 120px rgba(0, 0, 0, 0.35), 0 0 80px rgba(214, 168, 79, 0.1);
+}
+
 .product-showcase:first-child {
   min-height: 520px;
 }
@@ -777,6 +823,119 @@ textarea.input {
 .pricing-grid {
   display: grid;
   gap: 12px;
+}
+
+.featured-law {
+  position: relative;
+  overflow: hidden;
+  border-block: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    radial-gradient(circle at 72% 32%, rgba(214, 168, 79, 0.16), transparent 32%),
+    radial-gradient(circle at 18% 62%, rgba(10, 132, 255, 0.14), transparent 34%);
+}
+
+.featured-law::before {
+  content: "";
+  position: absolute;
+  inset: 12% auto 8% 5%;
+  width: min(360px, 38vw);
+  border: 1px solid rgba(214, 168, 79, 0.12);
+  border-radius: 999px;
+  opacity: 0.8;
+}
+
+.featured-law-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.78fr);
+  gap: 34px;
+  align-items: center;
+}
+
+.release-card {
+  min-height: 360px;
+  padding: 28px;
+  display: grid;
+  align-content: center;
+  gap: 18px;
+}
+
+.release-card h3 {
+  font-size: clamp(52px, 8vw, 92px);
+  line-height: 0.92;
+  color: var(--text);
+}
+
+.release-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.release-meta span {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  padding: 8px 12px;
+  color: rgba(245, 245, 247, 0.78);
+}
+
+.workflow-grid,
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.news-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.workflow-card,
+.news-card {
+  min-height: 230px;
+  padding: 22px;
+  display: grid;
+  align-content: space-between;
+}
+
+.workflow-card > span,
+.news-card > span {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.workflow-card svg {
+  color: var(--blue);
+  filter: drop-shadow(0 0 20px rgba(10, 132, 255, 0.24));
+}
+
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.footer-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.footer p {
+  margin: 8px 0 0;
+  color: var(--muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 .price-card {
@@ -870,7 +1029,16 @@ textarea.input {
   .grid,
   .grid.two,
   .admin-layout,
-  .download-row {
+  .download-row,
+  .landing-hero-grid,
+  .split-scene,
+  .featured-law-grid,
+  .showcase-grid,
+  .workflow-grid,
+  .news-grid,
+  .sector-strip,
+  .internal-shell,
+  .internal-grid {
     grid-template-columns: 1fr;
   }
 
@@ -888,5 +1056,34 @@ textarea.input {
 
   .hero {
     min-height: auto;
+  }
+
+  .landing-hero {
+    min-height: auto;
+    padding-top: 48px;
+  }
+
+  .mega-title {
+    font-size: clamp(48px, 17vw, 76px);
+  }
+
+  .device-body {
+    grid-template-columns: 1fr;
+  }
+
+  .device-sidebar {
+    border-left: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    grid-template-columns: 80px 1fr;
+  }
+
+  .service-line {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-panel,
+  .footer-grid {
+    align-items: flex-start;
+    flex-direction: column;
   }
 }

@@ -1,8 +1,8 @@
 export const site = {
   name: "N9 GROUP",
-  tagline: "نبتكر الأنظمة الذكية ونبني قواعد البيانات والأتمتة لتسريع نمو الأعمال.",
+  tagline: "أنظمة ذكية، قواعد بيانات، وأتمتة برمجية مصممة لتسريع إدارة الأعمال.",
   description:
-    "جهة تقنية متخصصة في تطوير البرمجيات المخصصة، المواقع، قواعد البيانات، الأتمتة، ولوحات التحكم.",
+    "شركة تقنية تطور برامج ويندوز، مواقع، أنظمة مخصصة، قواعد بيانات، أتمتة، ولوحات تحكم للقطاعات القانونية والتعليمية والتجارية.",
   contact: {
     name: "NASSEH ZAHER ALNAMAN",
     instagram: "NASSEHX10",
@@ -11,10 +11,10 @@ export const site = {
 };
 
 export const navigation = [
-  { label: "الرئيسية", href: "/" },
-  { label: "المنتجات", href: "/products" },
-  { label: "الخدمات", href: "/services" },
-  { label: "التحميل", href: "/downloads" },
-  { label: "حول N9", href: "/about" },
-  { label: "تواصل معنا", href: "/contact" }
+  { label: "النظام", href: "/#system" },
+  { label: "N9 LAW", href: "/products/n9-law" },
+  { label: "المنتجات", href: "/#products" },
+  { label: "الخدمات", href: "/#services" },
+  { label: "التحميلات", href: "/downloads" },
+  { label: "تواصل", href: "/contact" }
 ];

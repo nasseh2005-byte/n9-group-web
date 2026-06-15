@@ -8,13 +8,14 @@ export default function ProductsPage() {
     <main className="section">
       <div className="container">
         <div className="eyebrow">Products</div>
-        <h1>منتجات N9 الجاهزة والقابلة للتوسع.</h1>
+        <h1>منتجات N9 الجاهزة والقادمة.</h1>
         <p className="lead">
-          معرض الأنظمة والتطبيقات الحالية والقادمة، مع صفحات مستقلة لكل منتج وروابط تحميل عند توفرها.
+          N9 LAW SYSTEM هو المنتج الرئيسي المتاح حالياً كبرنامج ويندوز مستقل. المنتجات الأخرى تظهر كمساحات قادمة أو
+          قيد التطوير حتى تصبح روابطها وإصداراتها جاهزة.
         </p>
         <div className="grid">
-          {products.map((product) => (
-            <article className="card product-card" key={product.slug}>
+          {products.map((product, index) => (
+            <article className={index === 0 ? "card product-card main-product" : "card product-card"} key={product.slug}>
               <Image src={product.image} alt={product.name} width={160} height={160} />
               <span className="pill">{product.category}</span>
               <div>

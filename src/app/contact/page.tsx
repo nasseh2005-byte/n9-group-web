@@ -9,7 +9,8 @@ export default function ContactPage() {
           <div className="eyebrow">Contact</div>
           <h1>تواصل معنا</h1>
           <p className="lead">
-            أرسل فكرة النظام، نوع القطاع، والملفات التي تحتاج تطويرها أو تحويلها إلى نظام.
+            أرسل فكرة النظام، نوع القطاع، والملفات التي تحتاج تطويرها أو تحويلها إلى نظام. يمكن استخدام هذه الصفحة لاحقاً
+            كبوابة طلبات مع رفع ملفات.
           </p>
           <div className="card">
             <h3>{site.contact.name}</h3>

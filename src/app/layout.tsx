@@ -5,7 +5,7 @@ import { ClickSound } from "@/components/ClickSound";
 import { navigation, site } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "N9 GROUP",
+  title: "N9 GROUP | N9 SYSTEM",
   description: site.description
 };
 
@@ -25,14 +25,19 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                   {item.label}
                 </Link>
               ))}
-              <Link href="/admin">الإدارة</Link>
             </div>
           </nav>
         </header>
         {children}
         <footer className="footer">
-          <div className="container">
-            {site.name} © 2026 · {site.contact.email}
+          <div className="container footer-grid">
+            <div>
+              <strong>{site.name}</strong>
+              <p>أنظمة وبرمجيات مخصصة للقطاعات القانونية والتعليمية والتجارية.</p>
+            </div>
+            <div>
+              {site.name} © 2026 · {site.contact.email}
+            </div>
           </div>
         </footer>
       </body>
