@@ -8,6 +8,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect } from "react";
 import {
   ArrowLeft,
+  BarChart3,
   BriefcaseBusiness,
   Building2,
   CalendarDays,
@@ -15,13 +16,16 @@ import {
   Download,
   FileArchive,
   FileText,
+  Gavel,
   GraduationCap,
+  Landmark,
   Mail,
   MessageSquareText,
   Scale,
   ShieldCheck,
   Sparkles,
   Store,
+  TrendingUp,
   UploadCloud,
   Utensils
 } from "lucide-react";
@@ -47,6 +51,12 @@ const sectors = [
   { title: "التجاري", label: "متاجر وأنظمة إدارة وتشغيل", icon: Store },
   { title: "المطاعم", label: "منيوهات إلكترونية وتجارب طلب", icon: Utensils },
   { title: "الخدمات", label: "أتمتة، جداول، قواعد بيانات", icon: BriefcaseBusiness }
+];
+
+const businessSignals = [
+  { label: "Legal-grade structure", value: "LAW", icon: Scale },
+  { label: "Business workflows", value: "OPS", icon: BriefcaseBusiness },
+  { label: "Data automation", value: "DATA", icon: Database }
 ];
 
 const news = [
@@ -110,14 +120,14 @@ export function LandingExperience() {
         <N9Watermark />
         <div className="container landing-hero-grid">
           <motion.div initial={{ opacity: 0, y: 34 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-            <div className="eyebrow">Premium Software Systems by N9 GROUP</div>
+            <div className="eyebrow">Legal Systems · Business Automation · N9 GROUP</div>
             <h1 className="mega-title">
               N9 SYSTEM
-              <span>أنظمة ذكية لعمل أكثر وضوحاً وسرعة.</span>
+              <span>منظومة تقنية بطابع قانوني وتجاري فاخر.</span>
             </h1>
             <p className="lead">
-              N9 GROUP تبني برامج ويندوز، مواقع، قواعد بيانات، أتمتة، ولوحات تحكم مخصصة. المنتج الرئيسي حالياً هو
-              N9 LAW SYSTEM للقطاع القانوني.
+              N9 GROUP تبني برامج ويندوز، مواقع، قواعد بيانات، أتمتة، ولوحات تحكم مخصصة. الهوية تجمع صرامة القطاع
+              القانوني مع سرعة التقنية ووضوح حلول الأعمال.
             </p>
             <div className="actions">
               <Link className="button primary" href="/products/n9-law">
@@ -129,7 +139,8 @@ export function LandingExperience() {
             </div>
             <div className="hero-proof-row" aria-label="N9 capabilities">
               <span>Windows Software</span>
-              <span>Custom Systems</span>
+              <span>Legal Workflows</span>
+              <span>Business Automation</span>
               <span>Secure Downloads</span>
             </div>
           </motion.div>
@@ -140,11 +151,14 @@ export function LandingExperience() {
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
             transition={{ duration: 0.9, delay: 0.15 }}
           >
+            <div className="legal-seal" aria-hidden="true">
+              <Scale size={52} />
+            </div>
             <div className="device-top">
               <span />
               <span />
               <span />
-              <strong>N9 LAW · Windows Workspace</strong>
+              <strong>N9 LAW · Windows Business Workspace</strong>
             </div>
             <div className="device-body">
               <div className="device-sidebar">
@@ -152,6 +166,11 @@ export function LandingExperience() {
                 <span />
                 <span />
                 <span />
+                <div className="sidebar-icon-row" aria-hidden="true">
+                  <Landmark size={18} />
+                  <Gavel size={18} />
+                  <BarChart3 size={18} />
+                </div>
               </div>
               <div className="device-content">
                 <div className="law-dashboard-preview">
@@ -175,15 +194,27 @@ export function LandingExperience() {
                     <small>بيانات العملاء</small>
                   </div>
                   <div className="mini-stat">
-                    <strong>Updates</strong>
-                    <small>إصدارات ويندوز</small>
+                    <strong>Reports</strong>
+                    <small>مؤشرات الأعمال</small>
                   </div>
+                </div>
+                <div className="business-strip">
+                  {businessSignals.map((signal) => {
+                    const Icon = signal.icon;
+                    return (
+                      <div className="business-signal" key={signal.label}>
+                        <Icon size={18} />
+                        <strong>{signal.value}</strong>
+                        <small>{signal.label}</small>
+                      </div>
+                    );
+                  })}
                 </div>
                 <div className="legal-preview">
                   <ShieldCheck size={54} />
                   <div>
                     <h3>N9 LAW SYSTEM</h3>
-                    <p>برنامج مستقل للويندوز، وليس تطبيقاً عاماً داخل المتصفح.</p>
+                    <p>برنامج مستقل للويندوز، موجه للقطاع القانوني وإدارة أعمال المكاتب.</p>
                   </div>
                 </div>
               </div>
@@ -196,28 +227,28 @@ export function LandingExperience() {
         <div className="container split-scene">
           <div>
             <div className="eyebrow">About N9 System</div>
-            <h2>موقع يعرض منتجات N9 وخدماتها بدون خلط بين الشركة والبرنامج.</h2>
+            <h2>هوية واضحة: قانونية في الثقة، تقنية في التنفيذ، وتجارية في النتائج.</h2>
             <p className="lead">
-              الصفحة الرئيسية أصبحت مظلة واضحة: N9 GROUP كشركة تطوير، N9 SYSTEM كهوية للأنظمة، وN9 LAW كمنتج قانوني
-              رئيسي يعمل على ويندوز مع مركز تحميل مستقل.
+              الصفحة الرئيسية تعرض N9 GROUP كشركة تطوير، N9 SYSTEM كمظلة للأنظمة، وN9 LAW كمنتج قانوني رئيسي يعمل على
+              ويندوز مع مركز تحميل مستقل ومسار تواصل واضح.
             </p>
           </div>
-          <div className="glass-panel stack-panel">
+          <div className="glass-panel stack-panel legal-business-panel">
             <div className="stack-row">
-              <ShieldCheck />
-              <span>المسارات الداخلية مخفية عن الواجهة العامة</span>
+              <Scale />
+              <span>لمسات قانونية: ميزان، أعمدة، ومشهد محكمة خافت</span>
             </div>
             <div className="stack-row">
               <Database />
-              <span>بنية جاهزة لاحقاً لـ PostgreSQL وPrisma</span>
+              <span>فايب تقني: شبكات بيانات، أتمتة، وبنية قابلة للتوسع</span>
+            </div>
+            <div className="stack-row">
+              <TrendingUp />
+              <span>فايب أعمال: مؤشرات، تشغيل، وتقارير واضحة</span>
             </div>
             <div className="stack-row">
               <UploadCloud />
               <span>مركز تحميل مهيأ لإصدارات ويندوز والكتيبات</span>
-            </div>
-            <div className="stack-row">
-              <FileText />
-              <span>أخبار ومحتوى قابل للإدارة في المرحلة التالية</span>
             </div>
           </div>
         </div>
@@ -229,8 +260,8 @@ export function LandingExperience() {
             <div className="eyebrow">Featured Product</div>
             <h2>N9 LAW SYSTEM for Windows</h2>
             <p className="lead">
-              نظام قانوني مستقل لإدارة القضايا والعملاء والجلسات والملفات. لا يعمل كمنتج عام داخل المتصفح؛ هذه الصفحة
-              مخصصة للتعريف، التحميل، وطلب التركيب أو التواصل.
+              نظام قانوني مستقل لإدارة القضايا والعملاء والجلسات والملفات. الصفحة مخصصة للتعريف، التحميل، وطلب التركيب
+              أو التواصل، مع طابع بصري يليق بالقطاع القانوني.
             </p>
             <div className="symbol-row">
               {featured.highlights.map((item) => (
@@ -267,7 +298,7 @@ export function LandingExperience() {
           <div className="section-heading">
             <div>
               <div className="eyebrow">Workflow</div>
-              <h2>عرض يحكي طريقة عمل النظام بدل الاكتفاء بالشعارات.</h2>
+              <h2>طريقة عرض النظام أصبحت أقرب لمنتج أعمال حقيقي.</h2>
             </div>
           </div>
           <div className="workflow-grid">
