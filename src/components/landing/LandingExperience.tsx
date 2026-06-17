@@ -297,6 +297,8 @@ export function LandingExperience() {
       </section>
 
       <section className="section gsap-reveal" id="workflow">
+        <BlueNetwork />
+        <GoldGrid />
         <div className="container">
           <div className="section-heading">
             <div>
@@ -353,6 +355,8 @@ export function LandingExperience() {
       </section>
 
       <section className="section gsap-reveal" id="services">
+        <LegalColumns />
+        <BlueNetwork />
         <div className="container">
           <div className="eyebrow">Services</div>
           <h2>خدمات حسب الطلب، منفصلة بوضوح عن المنتجات الجاهزة.</h2>
@@ -411,6 +415,8 @@ export function LandingExperience() {
       </section>
 
       <section className="section gsap-reveal" id="news">
+        <GoldGrid />
+        <BlueNetwork />
         <div className="container">
           <div className="section-heading">
             <div>
@@ -431,6 +437,8 @@ export function LandingExperience() {
       </section>
 
       <section className="section contact-scene gsap-reveal" id="contact">
+        <LegalColumns />
+        <GoldGrid />
         <div className="container contact-panel">
           <div>
             <div className="eyebrow">Contact</div>
