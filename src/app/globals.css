@@ -25,6 +25,7 @@ html {
 body {
   margin: 0;
   background:
+    radial-gradient(circle at 50% -10%, rgba(255, 255, 255, 0.08), transparent 28%),
     linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
     linear-gradient(180deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
     radial-gradient(circle at 12% 8%, rgba(10, 132, 255, 0.2), transparent 25%),
@@ -136,7 +137,7 @@ img {
 }
 
 .section {
-  padding: 96px 0;
+  padding: 76px 0;
 }
 
 .hero {
@@ -538,14 +539,28 @@ textarea.input {
 
 .landing-shell {
   overflow: hidden;
+  position: relative;
+}
+
+.landing-shell::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, transparent 0 49%, rgba(10, 132, 255, 0.075) 50%, transparent 51%),
+    repeating-linear-gradient(180deg, transparent 0 12px, rgba(255, 255, 255, 0.018) 13px, transparent 14px);
+  background-size: 280px 100%, 100% 14px;
+  opacity: 0.65;
 }
 
 .landing-hero {
-  min-height: calc(100vh - 72px);
+  min-height: min(780px, calc(100vh - 48px));
   position: relative;
   display: grid;
   align-items: center;
-  padding: 96px 0 110px;
+  padding: 72px 0 64px;
   isolation: isolate;
 }
 
@@ -556,8 +571,22 @@ textarea.input {
   z-index: 1;
   pointer-events: none;
   background:
-    linear-gradient(180deg, rgba(3, 3, 5, 0.12), rgba(3, 3, 5, 0.42) 76%, rgba(3, 3, 5, 0.84)),
-    radial-gradient(circle at 48% 36%, transparent 0 30%, rgba(3, 3, 5, 0.26) 70%);
+    linear-gradient(180deg, rgba(3, 3, 5, 0.02), rgba(3, 3, 5, 0.16) 62%, rgba(3, 3, 5, 0.45)),
+    radial-gradient(circle at 48% 36%, transparent 0 34%, rgba(3, 3, 5, 0.16) 74%);
+}
+
+.landing-hero::after {
+  content: "";
+  position: absolute;
+  inset: 18% 0 auto;
+  z-index: 1;
+  height: 220px;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, transparent, rgba(10, 132, 255, 0.18), rgba(216, 180, 95, 0.12), transparent),
+    repeating-linear-gradient(90deg, transparent 0 42px, rgba(255, 255, 255, 0.045) 43px, transparent 44px);
+  mask-image: linear-gradient(180deg, transparent, black 26%, black 68%, transparent);
+  opacity: 0.76;
 }
 
 .landing-hero-grid {
@@ -604,18 +633,24 @@ textarea.input {
 }
 
 .pattern-legal {
-  width: min(820px, 72vw);
-  left: 1%;
-  bottom: 3%;
-  opacity: 0.32;
+  width: min(1120px, 92vw);
+  left: -2%;
+  top: 58px;
+  opacity: 0.62;
+  filter:
+    drop-shadow(0 0 26px rgba(216, 180, 95, 0.28))
+    drop-shadow(0 0 44px rgba(10, 132, 255, 0.12));
 }
 
 .pattern-network {
-  width: min(820px, 74vw);
-  right: -12%;
-  top: 8%;
-  opacity: 0.5;
-  filter: drop-shadow(0 0 24px rgba(10, 132, 255, 0.28));
+  width: min(980px, 82vw);
+  right: -10%;
+  top: 4%;
+  opacity: 0.78;
+  mix-blend-mode: screen;
+  filter:
+    drop-shadow(0 0 24px rgba(10, 132, 255, 0.44))
+    drop-shadow(0 0 36px rgba(216, 180, 95, 0.1));
 }
 
 .pattern-grid {
@@ -650,7 +685,8 @@ textarea.input {
   backdrop-filter: blur(22px);
   box-shadow:
     0 42px 140px rgba(0, 0, 0, 0.55),
-    0 0 90px rgba(10, 132, 255, 0.18),
+    0 0 100px rgba(10, 132, 255, 0.26),
+    0 0 70px rgba(216, 180, 95, 0.12),
     inset 0 1px 0 rgba(255, 255, 255, 0.12);
   overflow: hidden;
   transform-style: preserve-3d;
@@ -887,9 +923,63 @@ textarea.input {
   position: relative;
   border-block: 1px solid rgba(255, 255, 255, 0.08);
   background:
+    linear-gradient(90deg, rgba(10, 132, 255, 0.16), transparent 28%, rgba(216, 180, 95, 0.12)),
     linear-gradient(180deg, rgba(255, 255, 255, 0.015), transparent),
     radial-gradient(circle at 15% 20%, rgba(10, 132, 255, 0.12), transparent 30%),
     radial-gradient(circle at 85% 60%, rgba(214, 168, 79, 0.1), transparent 32%);
+  overflow: hidden;
+}
+
+.scene::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, transparent, rgba(216, 180, 95, 0.22), transparent),
+    repeating-linear-gradient(90deg, transparent 0 76px, rgba(216, 180, 95, 0.07) 77px, transparent 79px),
+    repeating-linear-gradient(180deg, transparent 0 56px, rgba(10, 132, 255, 0.045) 57px, transparent 59px);
+  mask-image: radial-gradient(circle at 18% 50%, black 0 18%, transparent 56%);
+  opacity: 0.72;
+}
+
+.scene::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 1px;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgba(10, 132, 255, 0.56), rgba(216, 180, 95, 0.42), transparent);
+  box-shadow: 0 0 34px rgba(10, 132, 255, 0.24);
+}
+
+.scene > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.scene .pattern-legal {
+  width: min(780px, 66vw);
+  left: -12%;
+  top: -74px;
+  opacity: 0.34;
+  filter:
+    drop-shadow(0 0 34px rgba(216, 180, 95, 0.22))
+    drop-shadow(0 0 28px rgba(10, 132, 255, 0.08));
+}
+
+.scene .pattern-network {
+  width: min(720px, 58vw);
+  right: -12%;
+  top: 3%;
+  opacity: 0.42;
+}
+
+.scene .pattern-grid {
+  width: min(640px, 56vw);
+  right: -2%;
+  bottom: -16%;
+  opacity: 0.42;
 }
 
 .legal-business-panel {
@@ -1052,6 +1142,7 @@ textarea.input {
   overflow: hidden;
   border-block: 1px solid rgba(255, 255, 255, 0.08);
   background:
+    repeating-linear-gradient(90deg, transparent 0 86px, rgba(216, 180, 95, 0.045) 87px, transparent 89px),
     linear-gradient(90deg, rgba(216, 180, 95, 0.08), transparent 42%, rgba(10, 132, 255, 0.08)),
     radial-gradient(circle at 72% 32%, rgba(214, 168, 79, 0.16), transparent 32%),
     radial-gradient(circle at 18% 62%, rgba(10, 132, 255, 0.14), transparent 34%);
@@ -1067,8 +1158,29 @@ textarea.input {
   opacity: 0.8;
 }
 
+.featured-law::after {
+  content: "";
+  position: absolute;
+  inset: 14% 0 auto;
+  height: 220px;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, transparent, rgba(216, 180, 95, 0.16), rgba(10, 132, 255, 0.12), transparent),
+    repeating-linear-gradient(90deg, transparent 0 52px, rgba(255, 255, 255, 0.04) 53px, transparent 54px);
+  opacity: 0.72;
+  mask-image: linear-gradient(180deg, transparent, black 28%, transparent);
+}
+
+.featured-law .pattern-legal {
+  width: min(900px, 70vw);
+  left: -8%;
+  top: -92px;
+  opacity: 0.28;
+}
+
 .featured-law-grid {
   position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(320px, 0.78fr);
   gap: 34px;

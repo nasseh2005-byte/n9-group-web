@@ -224,6 +224,8 @@ export function LandingExperience() {
       </section>
 
       <section className="section scene gsap-reveal" id="about">
+        <LegalColumns />
+        <BlueNetwork />
         <div className="container split-scene">
           <div>
             <div className="eyebrow">About N9 System</div>
@@ -255,6 +257,7 @@ export function LandingExperience() {
       </section>
 
       <section className="section featured-law gsap-reveal" id="law">
+        <LegalColumns />
         <div className="container featured-law-grid">
           <div>
             <div className="eyebrow">Featured Product</div>
@@ -318,6 +321,8 @@ export function LandingExperience() {
       </section>
 
       <section className="section scene gsap-reveal" id="products">
+        <BlueNetwork />
+        <GoldGrid />
         <div className="container">
           <div className="section-heading">
             <div>
@@ -379,6 +384,7 @@ export function LandingExperience() {
       </section>
 
       <section className="section scene gsap-reveal" id="downloads">
+        <LegalColumns />
         <div className="container split-scene">
           <div>
             <div className="eyebrow">Downloads</div>
